@@ -14,3 +14,6 @@ const a = prompt('What is the last movie that you have watched?', ''),
       d = prompt('How would you mark this movie');
 
 personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
