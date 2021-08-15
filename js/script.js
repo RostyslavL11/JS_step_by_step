@@ -1,10 +1,10 @@
 "use strict";
 
-if (1) {
-    console.log('OK!');
-} else { 
-    console.log('Eror');
-}
+// if (1) {
+//     console.log('OK!');
+// } else { 
+//     console.log('Eror');
+// }
 
 
 // if (num < 50) {
