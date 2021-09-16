@@ -1,50 +1,48 @@
 "use strict";
-// 2.16
+// 2.17
+// const arr = [1, 2, 4];
+// console.log(str[2]); 
 
-let num = 20;
-function showFirstMessage(text) {
-    console.log(text);
-    let num = 210;
-}
-
-showFirstMessage("HELLO");
-console.log(num);
-
-////
-
-// console.log(calc(4, 3));
-// console.log(calc(5, 6));
-// console.log(calc(10, 6));
-
-
-// function calc(a, b) {
-//     return (a + b);
-//     console.log("you can't use this one")
-// }
-
-/////
-
-function ret() {
-    let num = 50;
-
-
-//////
-
-    return num;
-}
-
-const anotherNum = ret();
-console.log(anotherNum);
-
-///////
-
-const logger = function() {
-    console.log('hello');
-};
-
-logger(); 
-
-const calc = (a, b) => {
-    console.log(1);
-    return a + b;
-};
+// метод зміни регістра
+const str = "test";
+console.log(str.toUpperCase());
+// 
+// 
+const strtwo = "teSt";
+console.log(strtwo.toLowerCase());
+// 
+// 
+const fruit = "Some fruit";
+console.log(fruit.indexOf("t"));
+// 
+// 
+const logg = "Hello world";
+console.log(logg.slice(6, 10));
+// 
+// 
+const loggg = "Hello world";
+console.log(loggg.slice(-5, -1));
+// 
+// 
+const logggg = "Hello world";
+console.log(logggg.substring(6, 11));
+// 
+// 
+const loggggg = "Hello world";
+// ту ми вказуємо довжину (скільки символів нам треба вирізати) 
+// (тут з шостої позиції та 5 символів)
+console.log(loggggg.substr(6, 5));
+// 
+// 
+// 
+// -----методи чисел---------
+const num = 12.2;
+console.log(Math.round(num));
+// метод який вик. на числа  
+// і переводить число в іншу систему числення
+const test = "12.2px";
+console.log(parseInt(test));
+// 
+// метод щоб взяти якесь число чи строку і попернути нам в десятичному варіанті 
+const testt = "12.2px";
+console.log(parseFloat(testt));
