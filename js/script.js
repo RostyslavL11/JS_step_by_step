@@ -1,37 +1,50 @@
 "use strict";
-// 2.15
+// 2.16
 
-const numberOfFilms = prompt ("How many movies have you watched", "");
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: true
-};
-
-for ( let i = 0; i < 2; i++) {
-    const a = prompt('What is the last movie that you have watched?', ''),
-          b = prompt('How would you mark this movie');
-
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDB.movies[a] = b; 
-        console.log('done');
-    } else {
-        console.log('Error');
-        i--;
-    }
-}   
-
-if(personalMovieDB.count < 10) {
-    console.log('You have watched to litte movies');
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    console.log('You love movies');
-} else if (personalMovieDB.count >= 30) {
-    console.log('WOW, you love movies so much');
-} else {
-    console.log('error');
+let num = 20;
+function showFirstMessage(text) {
+    console.log(text);
+    let num = 210;
 }
 
-console.log(personalMovieDB);
+showFirstMessage("HELLO");
+console.log(num);
+
+////
+
+// console.log(calc(4, 3));
+// console.log(calc(5, 6));
+// console.log(calc(10, 6));
+
+
+// function calc(a, b) {
+//     return (a + b);
+//     console.log("you can't use this one")
+// }
+
+/////
+
+function ret() {
+    let num = 50;
+
+
+//////
+
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+///////
+
+const logger = function() {
+    console.log('hello');
+};
+
+logger(); 
+
+const calc = (a, b) => {
+    console.log(1);
+    return a + b;
+};
