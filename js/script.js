@@ -1,48 +1,69 @@
 "use strict";
-// 2.17
-// const arr = [1, 2, 4];
-// console.log(str[2]); 
+// 2.18
 
-// метод зміни регістра
-const str = "test";
-console.log(str.toUpperCase());
-// 
-// 
-const strtwo = "teSt";
-console.log(strtwo.toLowerCase());
-// 
-// 
-const fruit = "Some fruit";
-console.log(fruit.indexOf("t"));
-// 
-// 
-const logg = "Hello world";
-console.log(logg.slice(6, 10));
-// 
-// 
-const loggg = "Hello world";
-console.log(loggg.slice(-5, -1));
-// 
-// 
-const logggg = "Hello world";
-console.log(logggg.substring(6, 11));
-// 
-// 
-const loggggg = "Hello world";
-// ту ми вказуємо довжину (скільки символів нам треба вирізати) 
-// (тут з шостої позиції та 5 символів)
-console.log(loggggg.substr(6, 5));
-// 
-// 
-// 
-// -----методи чисел---------
-const num = 12.2;
-console.log(Math.round(num));
-// метод який вик. на числа  
-// і переводить число в іншу систему числення
-const test = "12.2px";
-console.log(parseInt(test));
-// 
-// метод щоб взяти якесь число чи строку і попернути нам в десятичному варіанті 
-const testt = "12.2px";
-console.log(parseFloat(testt));
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt('Скільки фільмів ви переглянули?', '');
+
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Скільки фільмів ви переглянули?', '');
+    }
+}
+
+start();
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Один из последних просмотренных фильмов?', ''),
+              b = prompt('На сколько оцените его?', '');
+    
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log('done');
+        } else {
+            console.log('error');
+            i--;
+        }
+    }
+}
+// rememberMyFilms();
+
+function detectPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+        console.log("Просмотрено довольно мало фильмов");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        console.log("Вы классический зритель");
+    } else if (personalMovieDB.count >= 30) {
+        console.log("Вы киноман");
+    } else {
+        console.log("Произошла ошибка");
+    }
+}
+// detectPersonalLevel();
+
+
+
+function ShowMyDb(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+ShowMyDb(personalMovieDB.privat);
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i - 1] = prompt(`Ваш улюблений жанр під номером ${i}`);
+    }
+}
+writeYourGenres();
