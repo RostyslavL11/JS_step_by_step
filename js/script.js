@@ -1,58 +1,42 @@
 "use strict";
-// 2.20 Объекты, деструктуризация объектов (ES6)
+// 21. Массивы и псевдомассивы
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log("test");
-    }
-};
+const arr = [1, 2, 13, 26, 8];
+arr.sort(compareNum);
+console.log(arr);
 
-options.makeTest();
+function compareNum(a, b) {
+    return a - b;
+}
 
-const {border, bg} = options.colors;
-console.log(border);
+// arr.pop();
+// arr.push(10);
 
-// console.log(Object.keys(options).length);
+// console.log(arr);
 
-// console.log(options["colors"]["border"]);
-
-// console.log(options.name);
-
-// delete options.name;
-
-// console.log(options);
-
-// let counter = 0;
-// for (let key in options) {
-//     if (typeof(options[key]) === 'object') {
-//         for (let i in options[key]) {
-//             console.log(`Властивість ${i} має значення ${options[key][i]}`);
-//         }
-//     } else {
-//         console.log(`Властивість ${key} має значення ${options[key]}`);
-//         counter++;
-//     }
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
 // }
-// console.log(counter);
 
-// як взнати яка кількість пар ключ - значення є в середині обєкта?
+// const arr = [1, 2, 3, 6, 8];
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// const arr = [1, 2, 3, 6, 8];
+
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
+
+// const arr = [1, 2, 3, 6, 8];
+
+// arr.forEach(function(item , i, arr) {
+//     console.log(`${i}: ${item} всередині масива ${arr}`);
+// });
 
 
-const fruts = {
-    names: "apple",
-    count: 4,
-    color: "red",
-    tasty: {
-        sweet: 3,
-        bitter: 1
-    }
-};
-
-console.log(Object.keys(fruts).length);
+const str = prompt("", "");
+const products = str.split(", ");
+products.sort();
+console.log(products.join("; "));
