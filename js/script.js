@@ -1,42 +1,115 @@
 "use strict";
-// 21. Массивы и псевдомассивы
+// 22. Передача по ссылке или по значению, Spread оператор (ES6-ES9)
 
-const arr = [1, 2, 13, 26, 8];
-arr.sort(compareNum);
-console.log(arr);
+// let a = 5,
+//     b = a;
 
-function compareNum(a, b) {
-    return a - b;
+// b = a + 5;
+
+// console.log(b);
+// console.log(a);
+
+
+
+// const obj = {
+//     a: 5, 
+//     b:1
+// };
+
+// const copy = obj; // посилання
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+// ___________________________________
+
+
+
+// створюємо копію обєкту за допомогою функції 
+// яка за допомогою цикла вона створить новий обєкт 
+// вже перебираючи старі властивості які вже були в нашому обєкті 
+
+function copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+
+    return objCopy;
 }
 
-// arr.pop();
-// arr.push(10);
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7, 
+        y:4
+    }
+};
 
-// console.log(arr);
+const  newNumbers = copy(numbers);
 
-// for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-// }
+newNumbers.a = 10;
+newNumbers.c.x = 10;
 
-// const arr = [1, 2, 3, 6, 8];
-// for (let value of arr) {
-//     console.log(value);
-// }
+// console.log(newNumbers);
+// console.log(numbers);
+// // _____________________________
+// зєднуємо обєкт add з обєктом numbers 
 
-// const arr = [1, 2, 3, 6, 8];
+const add = {
+    d: 17,
+    e:20 
+};
 
-// arr[99] = 0;
-// console.log(arr.length);
-// console.log(arr);
+const clone = Object.assign({}, add);
 
-// const arr = [1, 2, 3, 6, 8];
+clone.d = 20;
 
-// arr.forEach(function(item , i, arr) {
-//     console.log(`${i}: ${item} всередині масива ${arr}`);
-// });
+console.log(add);
+console.log(clone);
+
+// метод щоб створили копію масиву
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'hello';
+
+console.log(newArray);
+console.log(oldArray);
+
+// 4 спосіб створення поверхневої копії з вик. оператора розвороту 
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'bloger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];
+
+      console.log(internet);
+
+    
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num = [2, 5, 7];
+
+log(...num);
+
+const array = ['a', 'b'];
+
+const narArrray = [...array];
 
 
-const str = prompt("", "");
-const products = str.split(", ");
-products.sort();
-console.log(products.join("; "));
+const q = {
+    one: 1, 
+    two: 2
+};
+
+const newQ = {...q};
+
+console.log(newQ);
