@@ -1,45 +1,38 @@
 "use strict";
-// 26. Динамическая типизация в JS
+// 27. Задачи с собеседований на понимание основ
 
-// to string 
+// let x = 5; alert( ++x );
+// let y = 5; alert( y++ );
 
-// 1)
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+// // [] + false - null + true;
+// console.log([] + false - null + true); //NaN
 
-// 2) конкатинація - коли ми щось складаємо зі строкою 
-console.log(typeof(5 + ''));
+// let y = 1; 
+// let x = y = 2; 
+// alert(x);
 
-const num = 5;
-console.log("https://vk.com/catalog/" + num);
 
-// формуємо стилі за допомогою коду JS і там нам треба передавати стілі у вигляді строки 
-const fontSize = 26 + 'px';
+// [] + 1 + 2
+// console.log([] + 1 + 2);
 
-// To Number
-// 1)
-console.log(typeof(Number('4')));
+// alert("1"[0]); 1
 
-// 2) вик. унарний +
-console.log(typeof(Number(+'5')));
+// 2 && 1 && null && 0 && undefined
+// console.log(2 && 1 && null && 0 && undefined); null
 
-// 3)
-console.log(typeof(parseInt("15px", 10)));
+// !!(a && b) === (a && b);
+// console.log(!!(1 && 2) === (1 && 2));
 
-// 4)+promt
-let answ = +prompt("Hello", "");
+// alert( null || 2 && 3 || 4);
 
-// To boolen
-// 0, '', null, undefined, NaN 
 
-let switcher = null;
+// const a = [1,2,3]; 
+// const b = [1,2,3]; 
+// console.log (a == b);
 
-if (switcher) { 
-    console.log('Working...');
-}
+// alert(+"infinity"); 
 
-switcher = 1;
-
-if (switcher) {
-    console.log('Working...');
-}
+// "Ёжик" > "яблоко"
+// console.log("Ёжик" > "яблоко");
+ 
+console.log(0 || "" || 2 || undefined || true || false);
