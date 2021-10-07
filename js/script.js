@@ -1,38 +1,28 @@
 "use strict";
-// 27. Задачи с собеседований на понимание основ
+// 28. Получение элементов со страницы 
+// старіші методи
+const box = document.getElementById('box');
 
-// let x = 5; alert( ++x );
-// let y = 5; alert( y++ );
+console.log(box);
 
-// // [] + false - null + true;
-// console.log([] + false - null + true); //NaN
+const btns = document.getElementsByTagName('button');
 
-// let y = 1; 
-// let x = y = 2; 
-// alert(x);
+console.log(btns[1]);
 
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
 
-// [] + 1 + 2
-// console.log([] + 1 + 2);
+// новіші методи 
+const hearts = document.querySelectorAll('.heart');
 
-// alert("1"[0]); 1
-
-// 2 && 1 && null && 0 && undefined
-// console.log(2 && 1 && null && 0 && undefined); null
-
-// !!(a && b) === (a && b);
-// console.log(!!(1 && 2) === (1 && 2));
-
-// alert( null || 2 && 3 || 4);
+hearts.forEach(item => {
+    console.log(item);
+});
 
 
-// const a = [1,2,3]; 
-// const b = [1,2,3]; 
-// console.log (a == b);
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart);
 
-// alert(+"infinity"); 
+const onebtn = document.querySelector('button');
+console.log(onebtn);
 
-// "Ёжик" > "яблоко"
-// console.log("Ёжик" > "яблоко");
- 
-console.log(0 || "" || 2 || undefined || true || false);
