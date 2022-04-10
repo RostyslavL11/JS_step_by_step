@@ -1,66 +1,59 @@
 "use strict";
-// 29. Действия с элементами на странице
-const box = document.getElementById('box'),
-      btns = document.getElementsByTagName('button'),
-      circles = document.getElementsByClassName('circle'),
-      wrapper = document.querySelector('.wrapper'),
-      hearts = wrapper.querySelectorAll('.heart'),
-      oneHeart = wrapper.querySelector('.heart');
+// 31. События и их обработчики
+const btns = document.querySelectorAll('button'),
+      overlay = document.querySelector('.overlay');
 
+// btn.onclick = function() {
+//     alert('Click');
+// };
 
-// box.style.backgroundColor = 'blue';
-// box.style.width = '500px';
+// btn.addEventListener('click', () => {
+//     alert('Click');
+// }); 
 
-box.style.cssText = `background-color: blue; width: 500px`;
+// let i = 0;
+const deleteElement = (event) => {
+    console.log(event.target);
+    console.log(event.type);
+    // i++;
+    // if (i == 1) {
+    //     btn.removeEventListener('click', deleteElement);
+    // }
+};
 
-btns[1].style.borderRadius = '100%';
-circles[0].style.backgroundColor = 'red';
+// btn.addEventListener('click', deleteElement);
+// overlay.addEventListener('click', deleteElement);
 
-// // майже не вик.
-// for (let i = 0; i < hearts.length; i++) {
-//     hearts[i].style.backgroundColor = 'black';
-// }
-
-hearts.forEach(item => {
-    item.style.backgroundColor = 'black';
+btns.forEach(btn => {
+    btn.addEventListener('click', deleteElement, {once: true});
 });
 
+const link = document.querySelector('a');
 
-// створюємо текстові вузли (елемнети без оболочки тега)
-const text = document.createTextNode('Here I am');
+link.addEventListener('click', (event) => {
+    event.preventDefault();
 
-// створюємо елемент 
-const div = document.createElement('div');
+    console.log(event.target);
+});
 
-div.classList.add('black');
-// вик. дерево DOM
-// добавляємо div. в кінець body 
+// 32. Навигация по DOM - элементам, data-атрибуты, преимущество for/of
 
-// document.body.append(div);
+// console.log(document.head);
+// console.log(document.documentElement);
+// console.log(document.body.childNodes);
+// console.log(document.body.firstChild);
+// console.log(document.body.firstElementChild);
+// console.log(document.body.lastChild);
 
+// console.log(document.querySelector('#current').parentNode.parentNode);
+// console.log(document.querySelector('#current').parentElement);
 
-wrapper.append(div);
-// wrapper.appendChild(div); //old
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
 
+for (let node of document.body.childNodes) {
+    if (node.nodeName == '#text') {
+        continue;
+    }
 
-
-// wrapper.prepend(div);
-// hearts[0].before(div);
-// hearts[0].after(div);
-// wrapper.insertBefore(div, hearts[1]); //old
-
-
-// circles[0].remove();
-// wrapper.removeChild(hearts[1]);  //old
-
-
-// заміняємо один елемент іншим 
-hearts[0].replaceWith(circles[0]);
-// wrapper.replaceChild(circles[0], hearts[0]);
-
-// як додавати якись текст чи html код просто в елементи 
-// div.textContent = "Hello";
-div.innerHTML = "<h1>Hello world</h1>";
-
-// спочатку вказуємо елемент над яким будуть махінації
-div.insertAdjacentHTML("afterend", '<h1>Hello</h1>');
+    console.log(node);
+}
